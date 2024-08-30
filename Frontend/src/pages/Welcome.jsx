@@ -5,7 +5,7 @@ export default function Welcome() {
         <div>
             <div className="max-w-md sm:mx-auto min-h-screen bg-primary">
                 <div className="flex flex-col mx-[20px] items-center">
-                    <div className="mt-[200px]">
+                    <div className="mt-[150px]">
                         <img src={logo} alt="TenTon Logo" />
                     </div>
                     <h1 className="text-white font-bold text-center text-6xl mt-2">TenTon</h1>
