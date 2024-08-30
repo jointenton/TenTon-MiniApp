@@ -16,7 +16,7 @@ export default function Welcome() {
                         Explore to see full features</p>
 
                     <Link to="/signup" className="w-full">
-                        <button className="w-full rounded-md py-2 bg-[#0D0D0D] text-white mt-[130px]">Create account</button>
+                        <button className="w-full rounded-md py-2 bg-[#0D0D0D] text-white mt-[130px] mb-[20px]">Create account</button>
                     </Link>
                 </div>
             </div>
