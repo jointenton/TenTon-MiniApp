@@ -5,7 +5,7 @@ export default function Welcome() {
         <div>
             <div className="max-w-md sm:mx-auto min-h-screen bg-primary">
                 <div className="flex flex-col mx-[20px] items-center">
-                    <div className="mt-[150px]">
+                    <div className="mt-[130px]">
                         <img src={logo} alt="TenTon Logo" />
                     </div>
                     <h1 className="text-white font-bold text-center text-6xl mt-2">TenTon</h1>
@@ -16,7 +16,7 @@ export default function Welcome() {
                         Explore to see full features</p>
 
                     <Link to="/signup" className="w-full">
-                        <button className="w-full rounded-md py-2 bg-[#0D0D0D] text-white mt-[150px]">Create account</button>
+                        <button className="w-full rounded-md py-2 bg-[#0D0D0D] text-white mt-[130px]">Create account</button>
                     </Link>
                 </div>
             </div>
