@@ -51,18 +51,18 @@ function Home() {
   const currentData = selectedTab === "Jobs" ? jobData.jobs : bountyData.bounties;
 
   const filteredData = currentData.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.company.toLowerCase().includes(searchTerm.toLowerCase())
+    (item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (item.company && item.company.toLowerCase().includes(searchTerm.toLowerCase()))
   );
-
+  
   const finalData = filteredData.filter(item => {
     const matchLocation = filterLocation ? item.location === filterLocation : true;
-    const matchCategory = filterCategory ? item.title.toLowerCase().includes(filterCategory.toLowerCase()) : true;
-    const matchJobType = jobType ? item.location.toLowerCase() === jobType.toLowerCase() : true;
-
+    const matchCategory = filterCategory ? (item.title && item.title.toLowerCase().includes(filterCategory.toLowerCase())) : true;
+    const matchJobType = jobType ? (item.location && item.location.toLowerCase() === jobType.toLowerCase()) : true;
+  
     return matchLocation && matchCategory && matchJobType;
   });
-
+  
   const sortedData = [...finalData].sort((a, b) => {
     switch (sortOption) {
       case "oldest":
@@ -77,26 +77,27 @@ function Home() {
         return 0;
     }
   });
-
+  
   const dataToDisplay = selectedTab === "Bounties" ? sortedData : finalData;
-
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
         setShowFilters(false);
       }
     };
-
+  
     if (showFilters) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-
+  
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [showFilters]);
+  
 
   return (
     <>
