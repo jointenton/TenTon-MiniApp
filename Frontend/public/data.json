@@ -1,0 +1,250 @@
+{
+    "jobsTitle": "Find jobs",
+    "jobsSubtitle": "Get access to recent jobs for you",
+    "jobs": [
+        {
+            "id": 1,
+            "title": "UI Designer",
+            "organization": "Meta Mask",
+            "location": "Nigeria",
+            "salary": "$120k/Yr",
+            "jobType": "Full-Time",
+            "aboutJob": "MetaMask is seeking a talented and creative UI Designer to join our team. As a UI Designer, you will be responsible for crafting visually appealing, intuitive, and user-friendly interfaces for our crypto wallet application. You will collaborate closely with our UX designers, developers, and product managers to bring innovative design solutions to life, ensuring a seamless and engaging user experience.",
+            "skills": [
+                "UI Designer",
+                "UX Designer",
+                "Figma",
+                "Visual Designer",
+                "Graphics Designer"
+            ],
+            "profileImage": "",
+            "document": null,
+            "documentName": "",
+            "time": "1 hour"
+        },
+        {
+            "id": 2,
+            "title": "Web Designer",
+            "organization": "Meta Mask",
+            "location": "Nigeria",
+            "salary": "$120k/Yr",
+            "jobType": "Full-Time",
+            "aboutJob": "MetaMask is seeking a talented and creative UI Designer to join our team. As a UI Designer, you will be responsible for crafting visually appealing, intuitive, and user-friendly interfaces for our crypto wallet application. You will collaborate closely with our UX designers, developers, and product managers to bring innovative design solutions to life, ensuring a seamless and engaging user experience.",
+            "skills": [
+                "UI Designer",
+                "UX Designer",
+                "Figma",
+                "Visual Designer",
+                "Graphics Designer"
+            ],
+            "profileImage": "",
+            "document": null,
+            "documentName": "",
+            "time": "3 hour"
+        },
+        {
+            "id": 3,
+            "title": "Web developer",
+            "organization": "Meta Mask",
+            "location": "Nigeria",
+            "salary": "$120k/Yr",
+            "jobType": "Full-Time",
+            "aboutJob": "MetaMask is seeking a talented and creative UI Designer to join our team. As a UI Designer, you will be responsible for crafting visually appealing, intuitive, and user-friendly interfaces for our crypto wallet application. You will collaborate closely with our UX designers, developers, and product managers to bring innovative design solutions to life, ensuring a seamless and engaging user experience.",
+            "skills": [
+                "UI Designer",
+                "UX Designer",
+                "Figma",
+                "Visual Designer",
+                "Graphics Designer"
+            ],
+            "profileImage": "",
+            "document": null,
+            "documentName": "",
+            "time": "2 hour"
+        }
+    ],
+    "bountiesTitle": "Bounties",
+    "bountiesSubtitle": "Challenge yourself and win big rewards ",
+    "bounties": [
+        {
+            "id": 1,
+            "title": "Smart Contract Dev",
+            "organization": "Linear Protocol",
+            "price": "1000",
+            "bountyType": "Smart Contract",
+            "aboutBounty": "Omnichain liquid restaking platform empowering a chain abstracted web3 future.",
+            "profileImage": "",
+            "document": null,
+            "documentName": "",
+            "time": "1 hour"
+        },
+        {
+            "id": 2,
+            "title": "UI Designer",
+            "organization": "Linear Protocol",
+            "price": "1000",
+            "bountyType": "Design",
+            "aboutBounty": "Omnichain liquid restaking platform empowering a chain abstracted web3 future.",
+            "profileImage": "",
+            "document": null,
+            "documentName": "",
+            "time": "1 hour"
+        },
+        {
+            "id": 3,
+            "title": "React Developer",
+            "organization": "Linear Protocol",
+            "price": "1000",
+            "bountyType": "Frontend",
+            "aboutBounty": "Omnichain liquid restaking platform empowering a chain abstracted web3 future.",
+            "profileImage": "",
+            "document": null,
+            "documentName": "",
+            "time": "1 hour"
+        }
+    ],
+    "searchTitle": "Search",
+    "searchSubtitle": "Find people and communities",
+    "categories": [
+        "All",
+        "user",
+        "community"
+    ],
+    "searchData": [
+        {
+            "id": 1,
+            "type": "user",
+            "name": "John Doe",
+            "location": "New York",
+            "link": "https://t.me/johndoe"
+        },
+        {
+            "id": 2,
+            "type": "user",
+            "name": "Jane Smith",
+            "location": "San Francisco",
+            "link": "https://t.me/janesmith"
+        },
+        {
+            "id": 3,
+            "type": "community",
+            "name": "React Developers",
+            "location": "Online",
+            "link": "https://t.me/reactdevelopers"
+        },
+        {
+            "id": 4,
+            "type": "community",
+            "name": "Web3 Enthusiasts",
+            "location": "Online",
+            "link": "https://t.me/web3enthusiasts"
+        },
+        {
+            "id": 5,
+            "type": "community",
+            "name": "Crypto Traders",
+            "location": "Online",
+            "link": "https://t.me/cryptotraders"
+        }
+    ],
+    "eventTitle": "Events",
+    "eventSubtitle": "Don’t miss out on events",
+    "eventCategories": [
+        "All",
+        "Web3",
+        "UI/UX",
+        "Crypto",
+        "Blockchain"
+    ],
+    "eventData": [
+        {
+            "id": 1,
+            "title": "Ton Blockchain",
+            "location": "Las Vegas",
+            "organization": "TonFricana",
+            "time": "10pm",
+            "price": "$50",
+            "date": "17 Dec",
+            "image": "data:image/png;base64,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"
+        },
+        {
+            "id": 2,
+            "title": "Web3 Conference",
+            "location": "New York",
+            "organization": "TonFricana",
+            "description": "Discover the future of decentralized technology at the TON Blockchain Summit. This premier event brings together industry leaders, developers, and enthusiasts to explore the latest advancements in TON Blockchain. Engage in insightful discussions, hands-on workshops, and networking opportunities. Don't miss the chance to connect with the brightest minds in blockchain and shape the future of decentralized applications. Secure your spot today!",
+            "time": "2pm",
+            "price": "Free",
+            "date": "22 Oct",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6CeH6GxTcIemvP0HeYaGUcEDlSh3Iyf9YMQ&s"
+        },
+        {
+            "id": 3,
+            "title": "UI/UX Design Meetup",
+            "location": "San Francisco",
+            "organization": "TonFricana",
+            "description": "Discover the future of decentralized technology at the TON Blockchain Summit. This premier event brings together industry leaders, developers, and enthusiasts to explore the latest advancements in TON Blockchain. Engage in insightful discussions, hands-on workshops, and networking opportunities. Don't miss the chance to connect with the brightest minds in blockchain and shape the future of decentralized applications. Secure your spot today!",
+            "time": "5pm",
+            "price": "$50",
+            "date": "30 Nov",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR0k7c_XNwJItPENWw_ixFTPyXgFszJ8EwPQ&s"
+        },
+        {
+            "id": 4,
+            "title": "Crypto Expo",
+            "location": "Los Angeles",
+            "organization": "TonFricana",
+            "description": "Discover the future of decentralized technology at the TON Blockchain Summit. This premier event brings together industry leaders, developers, and enthusiasts to explore the latest advancements in TON Blockchain. Engage in insightful discussions, hands-on workshops, and networking opportunities. Don't miss the chance to connect with the brightest minds in blockchain and shape the future of decentralized applications. Secure your spot today!",
+            "time": "11am",
+            "price": "$50",
+            "date": "15 Jan",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReoQULmEXUeXhi12jhrEr4wnxNU763gSiidA&s"
+        }
+    ],
+    "user": {
+        "id": 1,
+        "name": "Rex Albert",
+        "email": "Rexalbert@gmail.com",
+        "location": "Nigeria",
+        "balance": "3,343",
+        "referralId": "jskdjsos",
+        "about": "I’m a creative designer building web3 solutions by solving complex problems with my design skills.",
+        "skills": [
+            "UI Designer",
+            "UX Designer",
+            "Figma",
+            "Visual Designer",
+            "Graphics Designer"
+        ],
+        "facebook": "https://facebook.com",
+        "twitter": "https://facebook.com",
+        "linkedin": "https://facebook.com",
+        "telegram": "https://facebook.com",
+        "website": "https://facebook.com",
+        "portfolio": "https://facebook.com",
+        "appointment": "https://facebook.com",
+        "profileImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTEhIWFRUXGBgXFxcYGBcYFxoXGBcXGBgXGBgYHSggGBolHhcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lICUtLS0tLS0tLS0vLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOMA3gMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAQIDBQYHAAj/xABAEAABAwIDBQUFBQgBBAMAAAABAgMRACEEEjEFBkFRYRMicYGRBzKhsfBCUnLB0RQjYoKSouHxFSQzstIWNFP/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QAKBEAAgICAgIBBAEFAAAAAAAAAAECEQMhEjEEQSITMlFxwQUUYYGh/9oADAMBAAIRAxEAPwC72J7V3HZBwhN+7lVaOsiisR7THUqKRg7gTdf+KyOF2C72IdbfS3a4ET/ip9ubCQA2tONWtSh3oIJ0ubaCudLzU5Onr9Hfx+DiilCUbf5C8d7SNorlbOHQhCdQe8SeN6xe3N7HcaoF0AEcqc9hloztpxRyHXwNDbW2ChgIWh4OBWukj0rVh8lSfG+zned/T5QXOuv8r+AIGlBplOracklSqpErocGnTUKaCg5ShyhZpQqrsHiEZ6UKobNXs9SycQoLpQ6KFzUYxs9xVyMo/isfTWqlNRWyLG30hO0r3aVrdm7nDse1euVDupkpgRY21UTwP+qB3ZEk5FeAV+o/Slf3ELoZ/bTq6AO1pe2pzuAcSe8gxzFx8NKiKacpJ7Qpxrsd21J2tREUhFSyUS9rSZ6ZFeAqWQfnpM1NikioQcTSE0kUhqEPGkrxFNqi0gTHYhGc5VuFBuRmIB8profsq2k0t9bKGdUAlSjoB/usRsTZjTmIbbdVCVGCfkPWtfithJ2e4tbD6mncvdniOgNjXJzTxxqLs9PDHnyOXFpN/k2rmxcIjt0OpQVmSBxgi0Csq5vTsxpAZXhSctj3U6j41SbrfvW3n3sWtOIUSCVG5HCJql2hsfIo9oomRIJ4+dLxLHHJSvQUsXkZMVzad/5Jt4MXhnXc2FSUojiIv0HKq2hsGNfGjIrsx6POZNSY0UuWlintNlRypBUToACT6CrAG16KusNu46buQ2Ot1f0j8yKtMPszDtmye0IHvLuJ6J0+dJn5EI+x2Px5z6RmcLgnHPcQT10HqbVZs7Bj/uK8k/qf0q7BUfDlRDWEKzAF6xz8uT+3Ruh4MVubK3C4KO60gDrx8yb1ptjbCuFrEwfWrXZWx0oAKtauJSNLAUCi3uTClOMfjBFdiWFOKibDU1h9qthDqwND3h4Hh5XFb3HYvu5U8dTWO3oYhoOcUmD4K0+M+tVOg8V+ylOIJIEkc/0qvxbELV6jwNx86alw60Vi7pQvoUnyuPnTvFlU6/Ijz8fwUl6K5TdRlFELqFVq6JyBoTS5KYV17PVljimmlNJmpCqoQWkNIVUmahIIqmGnKVTCagSRHgMV/wBQktiSlQUAehkVv9tb8pceZUvCnM3Mp7pmRciuVYZ1IfnNlE6irw4loPNlDhcOYTxrBlgmto7njybn2tfyaTGb/wCGDigrBnLIMQAbcPCrHeT2j4PFtBpGFUkxcqy2toIrMbz7GCszpkKA0iJ8qj3I2Hh8S+EOPlu1oyySTEDNak4HiULj/sb5uLKsnyel1+iqwYEq5VoMFu/iHQFJbISftL7qfIn3vKa6Hgd38Hg5LTOZadXHP3i5jUTZH8oFQYrGqcVJNuFaZ+UoqkcuPiyyO3pGbY3YaRd1ZWeSe6n11PlFWWHKUAhtCUDkkR6nU+dFpRNJ2IrHPNOfbN2LxscPQAok609pmeFE/s4J1t9WonLaAKUaLQM1hpMRWh2awEJgATxPGocLhcootApsFQjJK9BC3xEVA69NhT8lVG823k4NtKlAKKiQB0Auet8o86bt6E6QctjrQ+N2eHGnG4upJjxFx8QKD3X3h/bA4Q3lyZYPAhU6T4HjV+kRQuNPZakcrXhEJupJPnp5CvKylCglIEQbC5jX4TVzvDhcjy08FHMPBV/gZHlVdhcMmbTe0fOqg+Mkx2Zc8bKcpM1GpFHOt5SQdQSPSmFuuuefsAKaYRVgGaRxgVKJZXxSAUZ2FJ2NSi7BCKTLRvYV79nqUTkBZaQijiweVN7DpUL5mHNSsulJC0mCDamLF69WY3J1su8XvZinBC1pIiPdFVJxChBFlJMgjUEGQfWoaUmhjCMftVDMmbJk+52d4x+PD4aeTYONocj8aAojxExQza+dUvs+f7XABPFlakfyk50nw7xH8tXRTWDKqmzZglcETo8ajdc4CkA16V5tEmljgrDJMDkB6nnRSRoBWP2zvOUEttiClRCjYzBggelbTYh7RtDn3kpV6iaZwfsS5oOSnnXOdv8AtAxLLi2OybSpBylclU/xAGwkQYMxNdRDQ41gfaTuWjEA4jDWfSO8ng6BpHJYAtziOVPglezPNv0WG5W+beMR2a4RiEiSnRKwPto/McPCsN7UdqdpjC2PdZSER/Ge+r5pHlWMYK2XAsLLa0KkEEhSVJPTQ20pmNxxdWtxZK1rUVKJsCVGTYaXp6gk7FOeqOyeybBZcEXVEDtHFEfhRCB8Qr1rZpWDZIKvAW9aB2BgG8NhmGcoUpDaQqZjNEqgfiJotzGKPH0sKRJqxsU6KLfTCnIhzLdJykAgmDpPn86yKFmZ0+NdAxrKnW3Ec0mPHUfECualw8qVLuzTj6os8QxmObmAfPQ/Kof2M0ZsvvpjiDVqjDgCuphlygjz/kR4ZGihOCNMXhKv1NCm5Ryppm5Mz4wZ5U9OC6VoE5eVFtlviKhdtmeZ2dP2aKTs8DVNaNh1kaUQphpX2hVWSjJ9m2PeTSZWeXwrZf8AEMEaiq/E7DamxHrUIkfP78G/Go81opVppUtVmOsR16KIJTyqEmoW1RvvZTiIW60dHESPxIM/+JV6Vt3EVzHcrE9k6hzglQJ/CbK+BNdUxwyqIms3lR6kP8We3Ewe/GPUghFxaUm4mTrI10+FH7mbzhxIbes4BZR0WB8lD4+tWG8uxBimwmwWm6FHnxSehgT4A1yzF4RTaih3MFJsU6R6a+PhVQjGcK9jJylGd+ixdxQWtSibqJVHG9yfjXat0kkYLDgalpBJJ5gHx41wQvBCSYAmwj68K+htkOtqabLSkrQEpAUkgpMADUeFHkVIXF2woMEnvK/pt8alShCDZInmbn41G8/lvQDuMJvSW0hiTZgvbDsZjIMWnuPKWEKAFnJBMqHBQCT3uOh4RyzDsqKhFr66aV0n2qPFxTDXBIUtXiohI+CVetVW6u7AxaHhOTKEhKokZjJ7w5QB61ohP4WxMofKkaDdffiYaxau9YB42BPJfI/xac4471pOa9fP+2tmP4dZaeQUm5B+yoc0nRQ+jFaTczfV7CQ24C7h+X20fgPL+E26ihlivaCWX0ztLaIFq5nt7C9niHExbNmHKFX/ADjyro2ztoNvNhxpQUhWhHPiCOBGhFZDf/DQpDgGvdPjqPzpUloZil8ir2FiIcAPG1aqAaw2DXCga6Zs7AJcbSsHUfHQ1q8WWmjn/wBRx/JSKpSKapma0A2Yka0qtmp4GtdnNcSg/YxXjhquF4PlQjrRqWXxK3saQMq50SWTTHLVLJQOsr50I644OJopzEUE9ir1ZRyFCe9FPcFMC4VNMW6ZrKdYQq6UyKeQYmmzULZ0L2b7sKxKFLmEgxW/2iwUBKeIABPEwImud+zvbDrSFpQogEzW32ZjC6lwKMkEKHODY/IetDmjeMVinxzC1lvaBgG1MF4p/eJKUpVYWUoSDzGvhWqArLe0VRGET1dTPgEOH5gVix/cjpz+1nN1sgwSY5cquN3ca9hl5mHVJnVI0V+IGx8xU+5iM+KZSQCMxkESICFHQ8LV0kbuYVKs6Ggk/wAMgf0i1asmRLTM8IXsfs/aq32wpwZVwMwggTGqeYosLprykpBKiEpFySQABzJOgrO4vfnAtGM6nCP/AM0yP6jAPkayqLk9I0uSitlptbdpGJOYqyqgCYkQD89dOdFbo7G/ZmS2bqUtS1HXWEp/tSKzjXtPwciWXwPBv/3q/wBl764F0wh4IUfsuAoPqqx8jTOM0qYrlFu0XW1NmtPtlt5sLSeB1B5pIuk9RWEx/s8KVSwrMj7ijCgON4hXLhXQVLJE15o0UZNdC5Kyr3X2UWExoL93hMkyBAgVPvRhe1YWOIGYeKb/ACmrXKYpFIkRRNWCpUzkzfOuj7mYvMyU/dPwP+qweNwvZurRyUY8OHwir/c3FFDhSD7wj69KHC6mM8yPLFZunL0MtCudIrFq5VEcSTwroHE0MdSvgarMSy6dDVoXelQPPxUJRT9m6OJod/tKue3B41EpSZq7JxM65n5UA64rka2qMp4TSOYQK+x8KrkTgcGwzIVxqB5MGjncMELgGRzqJ1IpCdnVcGuwOaSnGrzZGBYWhRcMKGl6qUlFWwsWJ5JcV/0n3UxOTNWy3d2mP2hCTouUH+bT+4JrJbOwwSbVaN90gjUEEHqLimpXExZFU7N84mCRVJvRso4hjsxY50qHlI+SjV884F5Vp0WkK/qE1CbVzNxkdaL5RMpuzu2tjENrVBAzj1TA4/xfA1scbjW2W1OOKCUJEk/pzJkADrTWlVzL2jbaLroYQf3bXvR9pzQzzy6eJNHG8ktgyqCKjereV3GLkyhoHutjTxX95Xy4dafB4Vx1WRtClq+6kEmOdtB1q43X3cXjHIBytJ99fLkkc1H4a9D13ZWzGsO32bKAgW01Ueajqo+NaJTUNIRGDntnLsD7PdoOCzSU/jWkfImKH2juZj2J7RhRSPtIhwf2mQPECu9bORAp2LMXoVkdWU4K6OGbsb2P4XuA524jsyTAM8NY46RXVN1N6GMWMqT2bomW1RNokp+8LjSnbT3bw2IkuNALOriO4vzUn3vOayZ3AdZWVtudon0UIMg93UiBcHyq7jLZNrR0y1IF1T7FecAyOkk8CdY4SRrx+FXSUxVFGI3uwsPJXHvpv4j/ABFBbMcKFpUOBFarevC5mcwF0EK8jY/XSsk2NDSXpmqPyhRvlYgEW0NQ9pFVmFdJQDTys104u0mcCaak0HLxEVXYjGA0140AoyaKgbZMrEgcKarFxUZRQmINSigs7VUnSKmTvG4OVZ9RNMU4alBbMO5cjwqPFNwJp6tQOlWL2Eb7ELzSqdKx9HcfysoIo7AOjQ17EITaPOpMOwIo+xKdMt8F0o6gNnmKsQoUcejLl+42W7bufDAcW1FPke8PmR5US6Kot0MTDi2/vpkfiRcfArq8XrFYvIjUjb4srhQJtPFdi0twagd3qpVk/EiuUNYBbzqUAEqWqL8zqSfCVHoK6ntrDrcQAiJnjYaHp9TQOwNhlpxTi4zWCY0ixUY5k28jzqsc1FMdOPJlvsfZzeGZS0jRIueKlHVR6mjQbVGpNSEAQKXbbsKkui7whASOcU169hUbJsKmChT10Zn2MbSalSmkzCnJWaIFng3JqQoA4U5vwp7gqFAeJbCkEHQgiufvJyEhWoJB8q6I4IBJsBMk2gcyawCnUPYslELaBuoQUlXIcFfLxquDkwvrLGmWuwUrULiEkSknj1A1jqbdavmsEzopSiekD8jQXaEgxYfPhJKjc+NeTiCLJAJ/Ff5aVrj8VSOfKPOTkwnFbHJu0oKH3TAV+hqkcw5SogggjUEQask4hYIJEec+ttasELS+nK5fkoe+n/HQ0SmBLHRnFIqtxSatMawptakK1HHgRwI6GqfEKuaYKIS3UC26kUo0xSqqwkYfsbg14a2r2IXcV5nWsaO5JbpDVJvU6U2pF6ijMY3EUVinDtj8LRoVQGFNE3pi6Ms9sP2fiuydQ5wSoE/h0V8JrevI7xrmpNdE2K/2uGaWdcuRX4kHKT5wD50jyI2rG+M6lQ4ivDQVKtFRuC1YzeIsyKek2BPC1RJp7KrGrRRZYVUiiQDQ2zTKR51YNNyNOP8Av4TT49GabpjUoqUJqn2vvRgcLIexCc33EfvHP6UzHnFYjbXtXWRlwjAbH33YUvybScqT1JV4U1QbEuf4OoOYhDaStxaUJAkqUQlI8SbCsntT2isCU4Rs4lQsV3QyD+MiV/yjzrnbeDxGMUHsa4tYFwlRPyFkDwA8qumcOEJSEpAVohMaclREeHKfR0cK9mbJnrSCHzicYqcY8VIsewbBQ0kRYFOqlHkoqPyq6Yw6W8oKQIulHLxjU/rUuztndmgSnvHvEqMXPGef5UmLxTLV3Fk/n0FtPKrddIFW18hFFajpJ43n86Kw7ZbHeISP4o+FprK4zfHvBOHbEkxInMeQ0NG4PZmIdheJVkTrlN1n+XRPib1KCNBhf3kntCRzywB4TrUgUhCpuo8Db1EC1QnEAAIbskevj10qAmfGf1oHIbHF7ZZ7ZHasFY99qJ5ls6z4GT5HnWSLla7ZBHaZFaOIUlX9sD0KqyYwpStSVapJB8QYpsHaM2SFSIFmocpo1WH41E42eVECjneIPeTUrJvUT+qanwOHUteVCSo8hesvSOzty0ecN6IecJAmh8U2UqgggjhT06Xq0KlabQXhBR4FQbKKZ72lazYmwFYsnsUjKmMy1WQOmkk9AKZEzT7M2YrX+z98KS81PukOJ8+6v5N+tXez90cLh3AMUQ6Ve5IIbniDe6uQNq0zbDUZOzQmNAEgCOYFSSUlTBTknaM6/kB99I/mFBYrEtJHecQI5rSOvE1Z7XwrCmipbaRlXBMdP81k9t7Bw7rKHmU5QrOmY1CZIVHilQFZfoxNayTZKreXBpIJxLRiZyqzmPBE1X4jfPDyezS87+BsgerhT8qsN2/ZkgIC3zKld7L90HQHrHxrRv7KweHSELygn3ITeRrPCi+kkV9V+2YD/wCeYyD+z4VCde8sqcMfhSEgH1oFt/H4sLVisQ72aEk5Efu0qJsE5UxPnyq5Oz3kYgltSUsTmI1VeCU5RryqPZ5ceU826ktIcH7oEgLzAk+7qkkE6jgKdGKozzlsyg2GUDN2aUg8VKED+m1XGzdhhIS46Ln3EAQByUevT6BjLXaKUtaMrLBISkg99aec6hPxNSbPWHXCSDf3QTIv505GaU2whhoQXHBYaAnU8AYm2lWOw2DmLyxJJMT9lIklXyA6qp6sCXHEtoTmCdQAL8ZMitUxsROSHTY6pB+BI4eFDKWi8eO5WzDbX284tRbZQpazYBAzH4TA60CxuliHTnxbvZpj/toIUvzV7qfLNW8xgab7jSEoH8Isep5mq551XS31BoOVdDqBsBg2MMMuHbCearlZk8Vm8fClcKlXmRM/EW+dSBPMRy8Pqacls3Btf5ULdjYpLYxKI+tOEVO0n6+vq1Ilsnj9Gp0CpRHKyXDiFoVyUPj3fkaC201GIc6qn+oA/nRbqwkFXAQfiP0qTbjQK0r4LQD5ix+Q9aZARl9FMRUKmqL7OhlnrRiKOWLRMGrTd/apwrnaJAXIgg1SrdIgVJhwVGACT0rLKCkql0dlTqVx7C9p4wuuFwgAqMwKVxcihXwQYNqkC7USSSpCpybbsNwhruW4jARs9mPt5lqPMqWfyCR5Vyzc3dHEYwZ0w20DBdXMEjUIAusjyHWuw4TCDDsNspUVBtOXMRc+Q8aYnSMk/lJJCbWwocQQRPSseMc+1mQtRVkUVNLN1ZSLoUeYM+RHhW5K7DrWX3iYgmAL3FvtD69JoWGugHEYz9qb7GcqnFpJOgAy95XiACaLwYQe4lI7NDjKEp4BACkgegrObviH3iTZCUhJm2ZUz4EAJH81aXDkIbKlEAdoySeAGY3PrQtBRk62aTGOmUoBy5puNYAm1UuPwAzAqGedFESfOKVzaiJ7dagltNkzxmyQOJUeQvWG3g2++9m7wSARkbuAIIgqKFd9ZzJETHQRJtskI2i2xCO2MsuSBPdgiY1McfGqlW7a3liHVJIIJVxTF5HI2rC7K2o5g3u1bJgGFJ7xzie9JgpKtYMgyn166vE5m0uI0WkGeYIkeGtGpNaFTxLtGb3mWYOQmAoJcFuUgj8VXO5+wlqSHFyhGoJ4jQEA/wCqA3VwBW/iH3RmZSEJg/acScwHgJJP4hW/ZW4siRA48PCo5UqKjiTfJiYVCW05Wkam54nqTxpzwURExz5/4o0Ji5qr2htHLZOpoRtopMWsAkC5HCq6xuJieXh6VO8sk34nX8qlZSL851iqAGoRP1z61MlETFKVR9fKoVu2nX6+VQnZNEWEU9NCsuT8vzohIvUCURMUJSR0P50XiwVYVCougj+lQj55aDeOvh8RVjstGZKm495EDxix9Yoo9g5V8TOurNDBJJsJo55FqBzkGximszxr2cmUnSr7c/a6cLiQ6tGdMEEcb8RPGqvaSUZh2Z7ta32dbkLxznauyjCoMKVcFxQ1bQeXNXDQX0zOKnGn7OhKX05XfQSxuw/tXELeZQGWSbuL90RwSB76ug8yK2+D9m+zGkgOBx5Q1UpakgnolsgAetazMEJCG0BDaBlSkCAAOA4CgsXtJhCTncTPIGTNFFKKpCpzc5cpE+FbQywGsOgJQgEITcxcniZNyT51lU72O5y08lKFDQgSk8jBMirLZe8LLhyqVkPCTY+fOs/vrjGVrSlICo+0nXNyB4jp+dF+waS6NBhtquqgkt5ZuUXHnOnnFGbebSpE6xeuVYLaDuHcuowY1Jm2sHiPLjWtwW9rboyLXlIsOvK36VGiJlfg0Ft14D7ZDg4H3cpieqT60ficRODfMadnI0sVH0oLb7iEqbUhwKnMm0nUTcRzTTdkMLxGExrKQrMtsZLG6pVEeoqV7KXdGUO8CsSZlKUIOVtJOXROYrJmYgEwOXQAj7YxiEtGAQSnLCTAyqJzgEgpABUlJCfvHqavN0/ZliiFKxC0sJIjKnK474TdKNeBmY5V0TZ+72FwraktoBXlJUtXeWSok+8fdEk2FUxqdaPnF0mVeM/E9BzNdV3CcLuz8qrlJUlPEwDa3w8quNk7rbMWrO5hUBaUgZZIbOUQVZBCZOvWtJstTDfcwzCUJAJGRAAm5tA5/Oqk+i0tMN2ds1tltCDBy69Vm6j1MzVhwtVK1s55XeUYvoT1mrZS0tolSrAa1cW/wBJJexi8QLibisxj3c06ATcxyqLEY8qcUQY4jw4ilbUDqPD68qgLfohS3ImKVZ4H/XKlcV4W48oPChnF314fXlVAkyVgmCbwPrrSJEyDadKGUJMen16elTk6DWT6G9QZFD20get/r0ogQL1G0g8RSvkAR0NUFYiDJPn8aO2K73hpmFjztaq5pUmZqfCDK6lQ0Nj8IP1zNGhMnZYv7CKnFDNAJJA6E1Uv7uuhwoHKZ6aV7be2lNYtcTKcpF7XQkxQGM38cUuQgCBEUWwVxta0co2fgHH3GmWhK3FBCeUk6noLk9Aa+ksGhGHbRhWEns2UBOY2EjUk8VEyT1Ncd9kbCv8Ak2RlnKh1RP3RkKc3qoD+atZve++cSpJWcoiEj3bzFudD6HTXy36NBthOYE9s2pZ0C1ANpHRP2j1M0Hg8AsDN2qHD91pLSE+GYgk+QFYvaDC+c2t0tNQILs6m3LX6iqoqzoKnsQnUoaTzUon4Tc+AoZeMw6ld9tD9pK1IR4WEaTOpNYoB1StSZvF9JE+FX2zsIqQVi4+tD5VdFOTNQGcEsCWEHoW0fOJost4dpskNtoEaJSmfleqAuBAOU34W6VWPYlSlwV6RPxJ+Yqici4axwBPYtpQJ96O8YOs8LDhV1tDEfucxJkiNTE8ayreOSIvz86e9toEwTI4D68qoibs0O76ylC8x7oObw6fCqTF44lxZn3pSeUXgfXSgsZvMMnZoTlTckzJMTPlb5VLu/s44oqUTDYN1c1awnyifHrVhJeyLYCQ8+GSbXKvITHif15V0BISkQLAWAHCs8nZWHwjnbhSyoAwCREkEcBJNz61W7Q26T9rXSD4xfnMVFoktmmx+00oESJrLYvELcJzKME6Cq/EbWTNzrcX/AFtPSof+XOa2nHn001qA/otk4eDJNuNqV59KRYaac46UIrGG02PU20oZb5VaL6H653iqJROVqJAJBEyOv6GKcsmQOE8fT9KFKDoDoY/3+lTtkka+vAm3pUCSFNpjQwT0H5aCpm4va30ahcWZnn6QeEVKCbeXHX1qrCoL7QRPl50I+ok2+r0x9wCAD1v8o+taRgj9frlVrYEmloIY4eX1NHsJkxQbCOIHl+dTJfCQT90flb5VYCVlVvDsZ/E41QYSVHs21awIKAJk9RWJ2uheHeU06nKtOoP1eunP7ZcwuIZcbSFBxjIoK4ltUzI498VzDevGOYrEuOugBRMQNABoKK1dFxxyUVKtdWbP2HYVRGKxarxlZT/5r+bdajaOww4ouKV3zz06VTex96NkuZfeD7k+aUEfCKpNr4p1wqVnIPKaF/gJPtsu/wBmQkkEpnjx9PhTVlkDUCT8vzrGLS9rmkgnU+BF7UO6p2ZmYEg30qEUbNgdqNJ90if0Gn1yqJ/bacoImZB8uXwrGOBzU8LefGfjXlEi0yLix9LT1NQJYzTq2/8AK/MSZnjyoZ/agM6A2zDj6elUPamDb9OGtDvFYUR4T51C+CRdv7UQIAPQm/WNKAXtlI1M2iePUWqteQeJmAPr50zZOyl4p7skWGqlHRInXqTwHGrS/JX6J/8Ak3HVFLSFLOpjlzPADxrr/s4WtOAT26OzyqXE2Ckk5godLkeVR7A2dhcKgIDaYGpIBKlfeVzPyqt3l28tRgGEzEajzjwquSJxZDvTtoLc7pMcBeDFUP7co6GNbRNtIv8AWtRqXmInqBMEDrpp0opnCg+6bwZ4C3zFUXVAoQVwIMaaGB4+g8JNXOz8OlsdorWBPlab1Gy4lpJPDny04ePCqjHbVUtUAgAfI9RpUIk2XLr6VTItPiBH5frTGXRmJMT42HSD50OO4iYBnnrBEaHTUUDhEAKggak24E+NSwlH0aJhQ+9J8tD9D40SiCY1B1rHYzaC21ASQCSY084+tavNkbSzxoLa8yNf9eNSypRaLUJixHd4c4/3b0pQgWP1NOcWCnWqt7aAyrCdQk34eM9KpskU+xisUXFFU2klJ6Tx6UfhVA9fXhxFYd3eRtuUNfvFHUx3E+B+15etVWJx+IeUpK3FRfuiyfCBr5zRgcLds3uL3swzZy9pmULQkTB494W+NNRtoPL7g7scdM2qfHvADpB51gsFgzmhQjxForV7OmIRBAkcT3tCTySLgdZ5UEh0EafenCOPYdl1qSWlrkgyQhYEk+aB61jgxxNyda2zeLW3gVlOqlAGeSpBjrWWERRxvszzlXxT9l97Gf8A6eNTwC0mOpbgn+0elVe13CnPFomNOter1T2R+/2VjThzkTbLPnGvxp6xATHNQ8oH6mvV6owgXEm/jHyFItAF+M/+ppK9RIhK60m4jgT5wTUUaDw/L9TXq9VIt9lTjrZhyP61pvZ8IYUoaqWZPOIAr1eqp9Fw7Ng2ZmeX5Vn9oCw8VfBNer1KQ1geFSMqTxj86PxKY0t7o8jrXq9RAMz20XlFIk6xPoKTDJBNx9Xr1eqMZHouMYkdn6fKg8MO+ocjA9KWvVXonsr9sXKOpFRFA7Bz9TwCj+Qr1eqLoJ9sy/8AzOIA7MPLyHUTeOWbWPOoHHlGQVKIOozGD4ia9XqcZ32SYEd7zHzq8xCAMRbiQT4xXq9VMiLlF20z0o3DIAAj7gPmRJr1epY0075/6E/jR8zWaxgjSvV6mR6Mc/uZ/9k=",
+        "friends": [
+            {
+                "name": "Royale",
+                "image": "path/to/royale-image.jpg"
+            },
+            {
+                "name": "Jehu",
+                "image": "path/to/jehu-image.jpg"
+            }
+        ],
+        "appliedJobs": [
+            {
+                "id": 1,
+                "title": "UI/UX Designer at ABC Corp",
+                "status": "Pending"
+            },
+            {
+                "id": 2,
+                "title": "Graphics Designer at XYZ Ltd",
+                "status": "Accepted"
+            }
+        ]
+    }
+}
