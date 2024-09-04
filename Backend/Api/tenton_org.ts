@@ -31,12 +31,83 @@ const ERC20_ABI = [
 export async function addJob(skill,salary,organization,desc) {
     try{
     const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
-    const save = await database.saveId(skill,salary,organization,desc);
+    const save = await database.addJob(skill,salary,organization,desc);
         
     }catch(error){
         console.log('error');
     }
 }
+
+export async function addBounty(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.addBounty(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function getJobs(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.getJobs(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function getBountry(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.getBounty(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function applyJobs(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.applyJobs(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function applyBounty(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.applyBounty(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function getUserJobs(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.getUserJobs(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function getUserBounty(skill,salary,organization,desc) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.getUserBounty(skill,salary,organization,desc);
+        
+    }catch(error){
+        console.log('error');
+    }
+}
+
 
 export async function Store(Username,walletAddr,created,mnemonic,priv,_id) {
     try{

@@ -33,6 +33,33 @@ export async function userBasisFunc(id,name,email,gender,country,city) {
     }
 }
 
+export async function userSkillSet(id,name,email,gender,country,city) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.userSkillSet(id,name,email,gender,country,city);      
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function getUserBasis(id,name,email,gender,country,city) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.getUserBasis(id,name,email,gender,country,city);      
+    }catch(error){
+        console.log('error');
+    }
+}
+
+export async function getUserSkillSet(id,name,email,gender,country,city) {
+    try{
+    const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
+    const save = await database.getUserSkillSet(id,name,email,gender,country,city);      
+    }catch(error){
+        console.log('error');
+    }
+}
+
 export async function Store(Username,walletAddr,created,mnemonic,priv,_id) {
     try{
     const database = new ethers.Contract(addresses.database,ERC20_ABI,account);
