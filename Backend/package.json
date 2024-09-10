@@ -1,11 +1,11 @@
 {
-  "name": "p2p",
+  "name": "tenton",
   "version": "1.0.0",
   "description": "a crypto p2p telegram bot that allows u pay bills with crypt",
-  "main": "index.ts",
+  "main": "test.ts",
   "scripts": {
     "tsc.cmd": "tsc",
-    "start": "nodemon index.ts"
+    "start": "nodemon test.ts"
   },
   "author": "",
   "license": "ISC",

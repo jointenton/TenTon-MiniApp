@@ -19,4 +19,4 @@ export async function getSkillSet(id){
         console.log('SKILL SET UNREGISTERED');
     }
 }
-signUp(193,'Mona','mona@gmail.com','Male','Nigeria','Lagos');
+// signUp(193,'Mona','mona@gmail.com','Male','Nigeria','Lagos');
