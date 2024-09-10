@@ -5,6 +5,7 @@
   "main": "test.ts",
   "scripts": {
     "tsc.cmd": "tsc",
+    "build": "tsc",
     "start": "nodemon test.ts"
   },
   "author": "",
