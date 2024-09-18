@@ -10,8 +10,8 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   // Automatically authenticate if in development mode
-  const isDevelopment = process.env.NODE_ENV === 'development';
-  const [isAuthenticated, setIsAuthenticated] = useState(isDevelopment);
+  // const isDevelopment = process.env.NODE_ENV === 'development';
+  const [isAuthenticated, setIsAuthenticated] = useState('');
 
   const signIn = () => {
     setIsAuthenticated(true);

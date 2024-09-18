@@ -1,7 +1,11 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import success from "../assets/success.png"
+import success from "../assets/success.png";
 import toast from 'react-hot-toast';
+import { getBigInt } from 'ethers/utils';
+
+// Import your backend function if needed
+import { signUp } from '../Backend/Api/api_user.ts'; // Adjust the path based on your project structure
 
 function SuccessPage() {
     const [error, setError] = useState(null);
@@ -9,24 +13,31 @@ function SuccessPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const location = useLocation();
     const { formData } = location.state || {};
-    const apiUrl = 'https://swift-liaison.onrender.com/api';
+
+    const generateNumericId = () => {
+        const timestamp = Date.now();
+        const random = Math.floor(Math.random() * 1000);
+        return getBigInt.from(timestamp.toString() + random.toString());
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             setLoading(true);
-            const res = await fetch(`${apiUrl}/auth/signup`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-            const data = await res.json();
-            if (data.success === false) {
+
+            // Generate a numeric ID and add it to the formData
+            const userId = generateNumericId();
+            
+            const updatedFormData = { ...formData, id: userId.toString() };
+
+            // Use your backend function directly with updatedFormData
+            const response = await signUp(updatedFormData);
+
+            if (response.success === false) {
                 setLoading(false);
-                setError(data.message);
-                toast.error(data.message, {
+                setError(response.message);
+                console.error(response.message)
+                toast.error(response.message, {
                     position: "bottom-center",
                     duration: 5000,
                 });
@@ -34,7 +45,7 @@ function SuccessPage() {
             }
             setLoading(false);
             setError(null);
-            toast.success(data.message, {
+            toast.success(response.message, {
                 position: "bottom-center",
                 duration: 5000,
             });
@@ -42,6 +53,7 @@ function SuccessPage() {
         } catch (error) {
             setLoading(false);
             setError(error.message);
+            console.error(error.message)
             toast.error(error.message, {
                 position: "bottom-center",
                 duration: 5000,
