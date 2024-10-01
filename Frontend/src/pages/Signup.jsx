@@ -5,13 +5,16 @@ import Select from 'react-select';
 import countryList from 'react-select-country-list';
 
 export default function SignUp() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    gender: "Male",  // Set a default value for gender
+    country: "",     // Initialize country
+    city: "",        // Initialize city
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedGender, setSelectedGender] = useState("Male");
-  const [activeTab, setActiveTab] = useState("personal"); // State to manage active tab
+  const [activeTab, setActiveTab] = useState("personal");
   const navigate = useNavigate();
   const options = useMemo(() => countryList().getData(), []);
-  const [value, setValue] = useState(null);
+  const [countryValue, setCountryValue] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,11 +23,18 @@ export default function SignUp() {
     });
   };
 
-  const changeHandler = (value) => {
-    setValue(value);
+  const handleGenderChange = (selectedGender) => {
     setFormData({
       ...formData,
-      country: value.label,
+      gender: selectedGender,
+    });
+  };
+
+  const changeHandler = (value) => {
+    setCountryValue(value);
+    setFormData({
+      ...formData,
+      country: value ? value.label : "",
     });
   };
 
@@ -34,10 +44,17 @@ export default function SignUp() {
   };
 
   const handleContinue = () => {
+    // Ensure city and country are included even if they're empty
+    const dataToSend = {
+      ...formData,
+      city: formData.city || "",
+      country: formData.country || "",
+    };
+
     if (activeTab === "company") {
-      navigate('/select-org-type', { state: { formData } });
+      navigate('/select-org-type', { state: { formData: dataToSend } });
     } else {
-      navigate('/select-tag', { state: { formData } });
+      navigate('/select-tag', { state: { formData: dataToSend } });
     }
   };
 
@@ -45,7 +62,6 @@ export default function SignUp() {
     <div className="max-w-md sm:mx-auto mx-5">
       <div className="flex flex-col min-h-screen w-full">
         <div className="flex-grow">
-
           {/* Tabs for Personal and Company */}
           <div className="sm:px-10 mb-4 max-w-[200px] mx-auto mt-20">
             <div className="flex border-b border-gray-200">
@@ -106,18 +122,15 @@ export default function SignUp() {
                 <div className="flex gap-5 bg-grayCus py-2 px-2 rounded-md mt-2">
                   <button
                     type="button"
-                    onClick={() => setSelectedGender("Male")}
-                    className={`px-4 py-2 rounded-md w-full ${selectedGender === "Male" ? "bg-black text-white" : "bg-grayCus text-black"
-                      }`}
+                    onClick={() => handleGenderChange("Male")}
+                    className={`px-4 py-2 rounded-md w-full ${formData.gender === "Male" ? "bg-black text-white" : "bg-grayCus text-black"}`}
                   >
                     Male
                   </button>
-
                   <button
                     type="button"
-                    onClick={() => setSelectedGender("Female")}
-                    className={`px-4 py-2 rounded-md w-full ${selectedGender === "Female" ? "bg-black text-white" : "bg-grayCus text-black"
-                      }`}
+                    onClick={() => handleGenderChange("Female")}
+                    className={`px-4 py-2 rounded-md w-full ${formData.gender === "Female" ? "bg-black text-white" : "bg-grayCus text-black"}`}
                   >
                     Female
                   </button>
@@ -130,7 +143,7 @@ export default function SignUp() {
                 </label>
                 <Select
                   options={options}
-                  value={value}
+                  value={countryValue}
                   onChange={changeHandler}
                   className="mt-2"
                 />
@@ -185,7 +198,7 @@ export default function SignUp() {
                 </label>
                 <Select
                   options={options}
-                  value={value}
+                  value={countryValue}
                   onChange={changeHandler}
                   className="mt-2"
                 />

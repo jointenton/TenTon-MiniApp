@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProfessionalForm() {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [skills, setSkills] = useState([]);
 
   const options = [
     "Freelancer",
@@ -15,7 +15,7 @@ function ProfessionalForm() {
   ];
 
   const handleOptionChange = (option) => {
-    setSelectedOptions((prevSelectedOptions) =>
+    setSkills((prevSelectedOptions) =>
       prevSelectedOptions.includes(option)
         ? prevSelectedOptions.filter((item) => item !== option)
         : [...prevSelectedOptions, option]
@@ -28,7 +28,7 @@ function ProfessionalForm() {
 
   const handleContinue = () => {
     // Add selected options to the formData
-    const updatedFormData = { ...formData, selectedOptions };
+    const updatedFormData = { ...formData, skills };
     navigate('/success', { state: { formData: updatedFormData } });
   };
 
@@ -47,11 +47,11 @@ function ProfessionalForm() {
                 <input
                   type="checkbox"
                   className="hidden"
-                  checked={selectedOptions.includes(option)}
+                  checked={skills.includes(option)}
                   onChange={() => handleOptionChange(option)}
                 />
-                <span className={`w-5 h-5 flex items-center justify-center rounded-full border-2 border-primary cursor-pointer ${selectedOptions.includes(option) ? "bg-blue-600 border-blue-600" : "border-gray-400"}`}>
-                  {selectedOptions.includes(option) && (
+                <span className={`w-5 h-5 flex items-center justify-center rounded-full border-2 border-primary cursor-pointer ${skills.includes(option) ? "bg-blue-600 border-blue-600" : "border-gray-400"}`}>
+                  {skills.includes(option) && (
                     <span className="w-4 h-4 bg-primary border-2 rounded-full"></span>
                   )}
                 </span>
@@ -66,7 +66,7 @@ function ProfessionalForm() {
             type="button"
             onClick={handleContinue}
             className="mt-6 w-full py-2 px-4 bg-primary my-5 text-white font-semibold rounded-md shadow-md hover:bg-blue-700"
-            disabled={selectedOptions.length === 0}
+            disabled={skills.length === 0}
           >
             Continue
           </button>

@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import success from "../assets/success.png";
 import toast from 'react-hot-toast';
-import { getBigInt } from 'ethers/utils';
-
-// Import your backend function if needed
-import { signUp } from '../Backend/Api/api_user.ts'; // Adjust the path based on your project structure
+import axios from 'axios'; // Import axios
 
 function SuccessPage() {
     const [error, setError] = useState(null);
@@ -14,50 +11,58 @@ function SuccessPage() {
     const location = useLocation();
     const { formData } = location.state || {};
 
-    const generateNumericId = () => {
-        const timestamp = Date.now();
-        const random = Math.floor(Math.random() * 1000);
-        return getBigInt.from(timestamp.toString() + random.toString());
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); // Start loading state
+        setError(null); // Reset error state
+
+        // Validate formData
+        if (!formData || Object.keys(formData).length === 0) {
+            const errorMessage = "No form data provided. Please try again.";
+            setError(errorMessage);
+            toast.error(errorMessage, {
+                position: "bottom-center",
+                duration: 5000,
+            });
+            setLoading(false); // Stop loading state
+            return; // Exit early if no formData
+        }
+
         try {
-            setLoading(true);
+            const {username, skills, tags, email, gender, country, city} = formData;
 
-            // Generate a numeric ID and add it to the formData
-            const userId = generateNumericId();
-            
-            const updatedFormData = { ...formData, id: userId.toString() };
+            const dataToSend = {
+                formData: { username, skills, tags, email, gender, country, city }
+            };
 
-            // Use your backend function directly with updatedFormData
-            const response = await signUp(updatedFormData);
+            // Use axios to send a POST request to your signup endpoint
+            const response = await axios.post('http://localhost:5000/api/users/signup', dataToSend); // Adjust the URL as needed
 
-            if (response.success === false) {
-                setLoading(false);
-                setError(response.message);
-                console.error(response.message)
-                toast.error(response.message, {
+            if (response.data.success === false) {
+                // Handle error response from the API
+                setError(response.data.message);
+                toast.error(response.data.message, {
                     position: "bottom-center",
                     duration: 5000,
                 });
-                return;
+            } else {
+                // Handle successful response
+                toast.success(response.data.message, {
+                    position: "bottom-center",
+                    duration: 5000,
+                });
+                setIsModalOpen(true);
             }
-            setLoading(false);
-            setError(null);
-            toast.success(response.message, {
-                position: "bottom-center",
-                duration: 5000,
-            });
-            setIsModalOpen(true);
         } catch (error) {
-            setLoading(false);
-            setError(error.message);
-            console.error(error.message)
-            toast.error(error.message, {
+            // Handle unexpected errors
+            const errorMessage = error.response ? error.response.data.message : error.message;
+            setError(errorMessage);
+            toast.error(errorMessage, {
                 position: "bottom-center",
                 duration: 5000,
             });
+        } finally {
+            setLoading(false); // Stop loading state
         }
         console.log('Form data submitted:', formData);
     };
@@ -74,10 +79,16 @@ function SuccessPage() {
             </div>
             <button
                 onClick={handleSubmit}
-                className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md my-5 shadow-md hover:bg-blue-700"
+                disabled={loading} // Disable button while loading
+                className={`w-full py-2 px-4 bg-primary text-white font-semibold rounded-md my-5 shadow-md hover:bg-blue-700 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
-                Continue
+                {loading ? 'Loading...' : 'Continue'}
             </button>
+
+            {/* Render error message if there's any */}
+            {error && (
+                <div className="text-red-500 text-center mt-4">{error}</div>
+            )}
         </div>
     );
 }

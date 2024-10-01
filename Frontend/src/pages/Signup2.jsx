@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const tags = [
+const tagList = [
     "Web3",
     "No-Code developer",
     "Marketer",
@@ -26,23 +26,23 @@ const tags = [
 ];
 
 export default function SelectTag() {
-    const [selectedTags, setSelectedTags] = useState([]);
+    const [tags, setTags] = useState([]);
     const navigate = useNavigate();
     const location = useLocation();
     const { formData = {} } = location.state || {}; // Initialize formData if undefined
 
     const handleContinue = () => {
         // Add selected tags to the formData
-        const updatedFormData = { ...formData, selectedTags };
+        const updatedFormData = { ...formData, tags };
         navigate('/profession', { state: { formData: updatedFormData } });
     };
 
     const toggleTag = (tag) => {
-        if (selectedTags.includes(tag)) {
-            setSelectedTags(selectedTags.filter((t) => t !== tag));
+        if (tags.includes(tag)) {
+            setTags(tags.filter((t) => t !== tag));
         } else {
-            if (selectedTags.length < 3) {
-                setSelectedTags([...selectedTags, tag]);
+            if (tags.length < 3) {
+                setTags([...tags, tag]);
             }
         }
     };
@@ -56,11 +56,11 @@ export default function SelectTag() {
                         interest</h1>
                     <p className="text-gray-500 mb-4">You can't pick more than three tags</p>
                     <div className="flex flex-wrap gap-2 mb-6">
-                        {tags.map((tag) => (
+                        {tagList.map((tag) => (
                             <button
                                 key={tag}
                                 onClick={() => toggleTag(tag)}
-                                className={`px-3 py-2 border rounded hover:bg-grayCus text-sm font-bold ${selectedTags.includes(tag)
+                                className={`px-3 py-2 border rounded hover:bg-grayCus text-sm font-bold ${tags.includes(tag)
                                     ? "bg-blue-600 text-white"
                                     : "bg-white text-gray-800"
                                     }`}
@@ -73,7 +73,7 @@ export default function SelectTag() {
                 <button
                     onClick={handleContinue}
                     className="w-full py-2 my-5 bg-primary text-white rounded font-bold"
-                    disabled={selectedTags.length === 0}
+                    disabled={tags.length === 0}
                 >
                     Continue
                 </button>
