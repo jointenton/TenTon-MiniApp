@@ -1,4 +1,4 @@
-const Organization = require('../models/organizationModel');
+import Organization from '../models/organizationModel.js';
 
 // Register a new organization
 const registerOrganization = async (req, res) => {
@@ -35,4 +35,4 @@ const getAllOrganizations = async (req, res) => {
     }
 };
 
-module.exports = { registerOrganization, getAllOrganizations };
+export { registerOrganization, getAllOrganizations };

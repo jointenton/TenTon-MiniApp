@@ -1,4 +1,5 @@
-const User = require('../models/userModel');
+import User from '../models/userModel.js';
+import jwt from "jsonwebtoken";
 
 // Register a new user
 const registerUser = async (req, res) => {
@@ -33,6 +34,35 @@ const registerUser = async (req, res) => {
     }
 };
 
+// Sign in user
+const signInUser = async (req, res, next) => {
+    // const { formData } = req.body
+
+    const { email } = req.body
+
+    try {
+         // check for email
+        const validUser = await User.findOne({ email });
+
+        if (!validUser) {
+            return res.status(404).json({ message: "Username does not exists" })
+        }
+
+        const loggedInUser = await User.findById(validUser._id)
+
+        // generate user token
+        const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
+
+        return res.status(200).json({ 
+            message: "Signed in successfully", 
+            user: loggedInUser,
+            token: token
+        })
+    } catch(error) {
+       next(error) 
+    }
+}
+
 // Get all users
 const getAllUsers = async (req, res) => {
     try {
@@ -43,4 +73,4 @@ const getAllUsers = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, getAllUsers };
+export { registerUser, getAllUsers, signInUser };

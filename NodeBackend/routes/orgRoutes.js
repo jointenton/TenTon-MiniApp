@@ -1,8 +1,8 @@
-const express = require('express');
-const { registerOrganization, getAllOrganizations } = require('../controllers/orgController');
+import express from 'express';
+import { registerOrganization, getAllOrganizations } from '../controllers/orgController.js';
 const router = express.Router();
 
 router.post('/signup', registerOrganization);
 router.get('/', getAllOrganizations);
 
-module.exports = router;
+export default router;

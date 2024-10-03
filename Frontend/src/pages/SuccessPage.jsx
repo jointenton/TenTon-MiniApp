@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import success from "../assets/success.png";
 import toast from 'react-hot-toast';
 import axios from 'axios'; // Import axios
@@ -9,6 +9,7 @@ function SuccessPage() {
     const [loading, setLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate()
     const { formData } = location.state || {};
 
     const handleSubmit = async (e) => {
@@ -52,6 +53,7 @@ function SuccessPage() {
                     duration: 5000,
                 });
                 setIsModalOpen(true);
+                navigate('/signin')
             }
         } catch (error) {
             // Handle unexpected errors
@@ -80,7 +82,7 @@ function SuccessPage() {
             <button
                 onClick={handleSubmit}
                 disabled={loading} // Disable button while loading
-                className={`w-full py-2 px-4 bg-primary text-white font-semibold rounded-md my-5 shadow-md hover:bg-blue-700 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`w-full py-2 px-4 bg-primary text-white font-semibold rounded-md mb-20 mt-5 shadow-md hover:bg-blue-700 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
                 {loading ? 'Loading...' : 'Continue'}
             </button>

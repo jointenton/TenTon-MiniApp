@@ -1,16 +1,30 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors'); // Import cors
-const userRoutes = require('./routes/userRoutes');
-const orgRoutes = require('./routes/orgRoutes');
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import cors from 'cors'; // Import cors
+import userRoutes from './routes/userRoutes.js';
+import orgRoutes from './routes/orgRoutes.js';
 
 dotenv.config();
 
 const app = express();
 
+const allowedOrigins = [
+    'http://127.0.0.1:3000',
+    'http://localhost:3000', 
+    // Add more allowed origins as needed
+  ];
+
 // Middleware
-app.use(cors()); // Enable CORS for all origins
+app.use(cors(
+    {
+        origin: allowedOrigins,
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true 
+    }
+)); // Enable CORS for all origins
+app.options('*', cors()); // Enable preflight requests for all routes
 app.use(express.json());
 
 // Routes

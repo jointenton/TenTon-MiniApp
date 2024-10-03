@@ -4,7 +4,12 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import { LocalStorage } from "../utils";
-
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from '../redux/user/userSlice';
+import { toast } from 'react-hot-toast'
 
 const AuthContext = createContext();
 
@@ -46,14 +51,24 @@ export const AuthProvider = ({ children }) => {
 
   const signIn = async (dataToSend) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/signup', { dataToSend });
-      if (response.data.isAuthenticated) {
+      // dispatch(signInStart());
+      const response = await axios.post('http://localhost:5000/api/users/signin', { dataToSend });
+
+      if (response.data) {
         setIsAuthenticated(true);
         setUser(response.data.user);
         // LocalStorage.set("access_token", response.data.token);
+        if (response.data.token) {
+          Cookies.set('authToken', response.data.token, { expires: 1 });
+        }
         LocalStorage.set("currentUser", response.data.user);
+        // dispatch(signInSuccess(response.data.user));
         console.log('Signed in successfully:', dataToSend);
       } else {
+        // dispatch(signInFailure(response.data.message));
+        // toast.error(response.data.message, {
+        //   position: 'bottom-center',
+        // });
         throw new Error('Authentication failed');
       }
     } catch (error) {
@@ -73,7 +88,7 @@ export const AuthProvider = ({ children }) => {
       setUser(_user);
       setIsAuthenticated(true);
     }
-  },)
+  },[])
 
   if (loading) {
     return <div>Loading...</div>; // You can customize this loading state

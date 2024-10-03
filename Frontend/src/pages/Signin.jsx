@@ -1,20 +1,23 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  signInStart,
-  signInSuccess,
-  signInFailure,
-} from '../redux/user/userSlice';
-import Cookies from 'js-cookie';
-import { toast } from 'react-hot-toast';// Ensure you have a video file in the assets folder
+// import {
+//   signInStart,
+//   signInSuccess,
+//   signInFailure,
+// } from '../redux/user/userSlice';
+// import Cookies from 'js-cookie';
+// import { toast } from 'react-hot-toast';// Ensure you have a video file in the assets folder
+import { useAuth } from '../context/AuthContext'
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
   const { loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const apiUrl = import.meta.env.VITE_API_URL;
+  // const dispatch = useDispatch();
+  const apiUrl = "http://localhost:5000/api/";
+
+  const { signIn } = useAuth()
 
   const handleChange = (e) => {
     setFormData({
@@ -25,40 +28,42 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      dispatch(signInStart());
-      const res = await fetch(`${apiUrl}/auth/signin`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json(); 
-      console.log(data)
+    signIn(formData)
+    navigate('/')
+    // try {
+    //   dispatch(signInStart());
+    //   const res = await fetch(`${apiUrl}users/signin`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
+    //   const data = await res.json(); 
+    //   console.log(data)
 
-      if (data.success === false) {
-        dispatch(signInFailure(data.message));
-        toast.error(data.message, {
-          position: 'bottom-center',
-        });
-        return;
-      }
+    //   if (data.success === false) {
+    //     dispatch(signInFailure(data.message));
+    //     toast.error(data.message, {
+    //       position: 'bottom-center',
+    //     });
+    //     return;
+    //   }
 
-      if (data.token) {
-        Cookies.set('access_token', data.token, { expires: 1 });
-        localStorage.setItem('currentUser', JSON.stringify(data));
-      }
+    //   if (data.token) {
+    //     Cookies.set('access_token', data.token, { expires: 1 });
+    //     localStorage.setItem('currentUser', JSON.stringify(data));
+    //   }
 
-      dispatch(signInSuccess(data));
-      navigate('/');
-    } catch (error) {
-      dispatch(signInFailure(error.message));
-      console.log(error)
-      toast.error(error.message, {
-        position: 'bottom-center',
-      });
-    }
+    //   dispatch(signInSuccess(data));
+    //   navigate('/');
+    // } catch (error) {
+    //   dispatch(signInFailure(error.message));
+    //   console.log(error)
+    //   toast.error(error.message, {
+    //     position: 'bottom-center',
+    //   });
+    // }
   };
 
   return (
@@ -78,13 +83,13 @@ export default function SignIn() {
             id="email"
             onChange={handleChange}
           />
-          <input
+          {/* <input
             type="password"
             placeholder="password"
             className="border p-3 rounded-lg focus:outline-none"
             id="password"
             onChange={handleChange}
-          />
+          /> */}
 
           <button
             disabled={loading}
