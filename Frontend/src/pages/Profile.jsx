@@ -1,52 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import profileBg from "../assets/profile-bg.png";
-import coin from "../assets/coin.png";
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { IoLocationOutline } from "react-icons/io5";
 import { GrEdit } from "react-icons/gr";
 import { RxCopy } from "react-icons/rx";
+
+// Import your assets
+import profileBg from "../assets/profile-bg.png";
+import coin from "../assets/coin.png";
 import fb from "../assets/fb.png";
 import twitter from "../assets/twitter.png";
 import link from "../assets/link.png";
 import tele from "../assets/tele.png";
-import { Link } from 'react-router-dom';
 
 const ProfilePage = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [activeTab, setActiveTab] = useState('about');
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        location: '',
-        balance: '',
-        referralId: '',
-        friends: [],
-        about: '',
-        skills: [],
-        facebook: '',
-        twitter: '',
-        linkedin: '',
-        telegram: '',
-        website: '',
-        portfolio: '',
-        appointment: '',
-        profileImage: '',
-        appliedJobs: []
-    });
+    const { user, loading, handleSave, handleImageUpload } = useAuth();
+    const [formData, setFormData] = useState({});
+
     useEffect(() => {
-        const fetchProfileData = async () => {
-            try {
-                const response = await fetch('/data.json'); // Adjust path as needed
-                const data = await response.json();
-                setUser(data.user); // Set the profile data from JSON
-            } catch (error) {
-                console.error("Error fetching profile data:", error);
-            }
-        };
+        if (user) {
+            setFormData({
+                name: user.name || '',
+                email: user.email || '',
+                about: user.about || '',
+                skills: user.skills ? user.skills.join(', ') : '',
+                facebook: user.facebook || '',
+                twitter: user.twitter || '',
+                linkedin: user.linkedin || '',
+                telegram: user.telegram || '',
+                website: user.website || '',
+                portfolio: user.portfolio || '',
+                appointment: user.appointment || '',
+                profileImage: user.profileImage || '',
+            });
+        }
+    }, [user]);
 
-        fetchProfileData();
-    }, []);
+    if (loading) return <div>Loading...</div>;
+    if (!user) return <div>User not found</div>;
 
-    if (!user) return <div>Loading...</div>;
     const copyToClipboard = () => {
         navigator.clipboard.writeText(user.referralId).then(() => {
             alert('Text copied to clipboard!');
@@ -59,8 +53,19 @@ const ProfilePage = () => {
         setIsEditing(true);
     };
 
-    const handleSave = () => {
-        setIsEditing(false);
+    const handleFormSave = async () => {
+        try {
+            const updatedUserData = {
+                ...formData,
+                skills: formData.skills.split(',').map(skill => skill.trim())
+            };
+            const success = await handleSave(updatedUserData);
+            if (success) {
+                setIsEditing(false);
+            }
+        } catch (error) {
+            console.error('Error saving profile:', error);
+        }
     };
 
     const handleCancel = () => {
@@ -68,24 +73,20 @@ const ProfilePage = () => {
     };
 
     const handleChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
     };
 
-    const handleImageUpload = (e) => {
+    const onFileChange = (e) => {
         const file = e.target.files[0];
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-            setUser({ ...user, profileImage: reader.result });
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    };
+        handleImageUpload(file); // Call the image upload function
+      };
 
     const handleRemoveImage = () => {
-        setUser({ ...user, profileImage: '' });
+        // Send a request to remove the profile image
+        // For example: removeProfileImage();
     };
 
     return (
@@ -107,10 +108,10 @@ const ProfilePage = () => {
                 </div>
             </div>
             <div className="text-center mt-2">
-                <h2 className="text-xl font-semibold">{user.name}</h2>
+                <h2 className="text-xl font-semibold">{user.username}</h2>
                 <p className="text-gray-500">{user.email}</p>
                 <p className="text-gray-500 flex justify-center gap-2 items-center">
-                    <IoLocationOutline className='text-primary text-xl' /> {user.location}
+                    <IoLocationOutline className='text-primary text-xl' /> {user.country} {user.city}
                 </p>
                 <div className='flex justify-center gap-2 mt-2'>
                     <Link to={user.facebook} target='_blank'><img src={fb} alt="" /></Link>
@@ -166,8 +167,7 @@ const ProfilePage = () => {
                                 <div className='flex items-center'> <div className='w-1 h-1 rounded-full bg-black mr-2'></div><li className='text-primary font-semibold text-md'>Invite a friend</li></div>
                                 <p className='ml-2'>You will get 500 points</p>
 
-                                <div className='flex mt-2'>  <div className='w-1 h-1 rounded-full bg-black mr-2 mt-3'></div><li className='text-primary font-semibold text-md'>Invite a Friend with a Telegram Premium
-                                    Account</li> </div>
+                                <div className='flex mt-2'>  <div className='w-1 h-1 rounded-full bg-black mr-2 mt-3'></div><li className='text-primary font-semibold text-md'>Invite a Friend with a Telegram Premium Account</li> </div>
                                 <p className='ml-2'>You will get 5000 points</p>
                             </ul>
                         </div>
@@ -194,7 +194,6 @@ const ProfilePage = () => {
                                     </div>
                                 ))}
                             </div>
-
                         </div>
                     </div>
                 )}
@@ -229,7 +228,6 @@ const ProfilePage = () => {
                                             <img src={user.profileImage} alt="Profile" className="w-full h-full object-cover" />
                                         </div>
                                         <div className="flex mt-4 gap-2">
-
                                             <button className="bg-primary text-white py-2 px-3 rounded-md" onClick={() => document.getElementById('imageUpload').click()}>
                                                 Change Picture
                                             </button>
@@ -244,7 +242,6 @@ const ProfilePage = () => {
                                 ) : (
                                     <>
                                         <div className="w-[100px] h-[100px] bg-gray-200 rounded-full flex items-center justify-center">
-
                                         </div>
                                         <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4" onClick={() => document.getElementById('imageUpload').click()}>
                                             Change Picture
@@ -255,20 +252,19 @@ const ProfilePage = () => {
                                     id="imageUpload"
                                     type="file"
                                     accept="image/*"
-                                    onChange={handleImageUpload}
+                                    onChange={onFileChange}
                                     className="hidden"
                                 />
                             </div>
                         </div>
 
-
                         <div className="mb-4">
                             <label className="block text-sm font-medium mb-1">Name</label>
                             <input
                                 type="text"
-                                name="name"
+                                name="username"
                                 placeholder='Full Name'
-                                value={user.name}
+                                value={formData.username}
                                 onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
@@ -279,7 +275,7 @@ const ProfilePage = () => {
                                 type="email"
                                 name="email"
                                 placeholder='yourmail@gmail.com'
-                                value={user.email}
+                                value={formData.email}
                                 onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
@@ -288,7 +284,7 @@ const ProfilePage = () => {
                             <label className="block text-sm font-medium mb-1">Bio</label>
                             <textarea
                                 name="about"
-                                value={user.about}
+                                value={formData.about}
                                 placeholder='About me.............'
                                 onChange={handleChange}
                                 className="w-full min-h-[100px] p-2 border rounded"
@@ -300,7 +296,8 @@ const ProfilePage = () => {
                                 type="text"
                                 name="skills"
                                 placeholder="Add skills separated by commas"
-                                onChange={(e) => setUser({ ...user, skills: e.target.value.split(',') })}
+                                value={formData.skills}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
@@ -310,7 +307,8 @@ const ProfilePage = () => {
                                 type="text"
                                 name="facebook"
                                 placeholder="Add Facebook URL"
-                                onChange={(e) => setUser({ ...user, facebook: e.target.value.split(',') })}
+                                value={formData.facebook}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
@@ -320,17 +318,19 @@ const ProfilePage = () => {
                                 type="text"
                                 name="twitter"
                                 placeholder="Add Twitter URL"
-                                onChange={(e) => setUser({ ...user, twitter: e.target.value.split(',') })}
+                                value={formData.twitter}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
                         <div className="mb-4">
-                            <label className="block text-sm font-medium mb-1">Linkedin URL:</label>
+                            <label className="block text-sm font-medium mb-1">LinkedIn URL:</label>
                             <input
                                 type="text"
                                 name="linkedin"
-                                placeholder="Add Linkedin URL"
-                                onChange={(e) => setUser({ ...user, linkedin: e.target.value.split(',') })}
+                                placeholder="Add LinkedIn URL"
+                                value={formData.linkedin}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
@@ -340,7 +340,8 @@ const ProfilePage = () => {
                                 type="text"
                                 name="telegram"
                                 placeholder="Add Telegram URL:"
-                                onChange={(e) => setUser({ ...user, telegram: e.target.value.split(',') })}
+                                value={formData.telegram}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
@@ -350,7 +351,8 @@ const ProfilePage = () => {
                                 type="text"
                                 name="website"
                                 placeholder="Add website URL"
-                                onChange={(e) => setUser({ ...user, website: e.target.value.split(',') })}
+                                value={formData.website}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
@@ -360,7 +362,8 @@ const ProfilePage = () => {
                                 type="text"
                                 name="portfolio"
                                 placeholder="Add Portfolio URL:"
-                                onChange={(e) => setUser({ ...user, portfolio: e.target.value.split(',') })}
+                                value={formData.portfolio}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
@@ -370,13 +373,14 @@ const ProfilePage = () => {
                                 type="text"
                                 name="appointment"
                                 placeholder="Add Appointment URL"
-                                onChange={(e) => setUser({ ...user, appointment: e.target.value.split(',') })}
+                                value={formData.appointment}
+                                onChange={handleChange}
                                 className="w-full p-2 border rounded"
                             />
                         </div>
 
                         <div className=''>
-                            <button onClick={handleSave} className="w-full bg-blue-500 text-white py-2 rounded mt-4">
+                            <button onClick={handleFormSave} className="w-full bg-blue-500 text-white py-2 rounded mt-4">
                                 Save
                             </button>
                             <button onClick={handleCancel} className="w-full bg-black text-white py-2 rounded mt-2">

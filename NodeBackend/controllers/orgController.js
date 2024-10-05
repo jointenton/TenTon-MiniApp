@@ -5,16 +5,22 @@ const registerOrganization = async (req, res) => {
     const { name, description, location } = req.body;
 
     // Check if organization already exists
-    const orgExists = await Organization.findOne({ name });
+
+    const { username, email, city, country, companyType, gender } = formData;
+
+    const orgExists = await Organization.findOne({ username });
     if (orgExists) {
         return res.status(400).json({ message: 'Organization already exists' });
     }
 
     // Create organization
     const organization = new Organization({
-        name,
-        description,
-        location
+        username,
+        email,
+        city,
+        country,
+        companyType,
+        gender,
     });
 
     try {

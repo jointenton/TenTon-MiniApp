@@ -48,6 +48,9 @@ const userSchema = new mongoose.Schema({
     facebook: {
         type: String,
     },
+    twitter: {
+        type: String,
+    },
     instagram: {
         type: String,
     },

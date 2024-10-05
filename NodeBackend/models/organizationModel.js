@@ -49,7 +49,6 @@ const organizationSchema = new mongoose.Schema({
     },
     profileImage: {
         type: String,
-        required: true,
     },
     appointment: {
         type: String,

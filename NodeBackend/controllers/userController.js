@@ -6,7 +6,7 @@ const registerUser = async (req, res) => {
     const { formData } = req.body; // Destructure formData from req.body
 
     // Extract properties from formData
-    const { username, skills, tags, email, gender, country, city } = formData;
+    const { username, skills, tags, email, gender, country, city, profileImage, referalId, friends, about } = formData;
 
     // Check if user already exists
     const userExists = await User.findOne({ username });
@@ -23,6 +23,10 @@ const registerUser = async (req, res) => {
         gender,
         country,
         city,
+        profileImage,
+        about,
+        referalId, // Assign
+        friends,
 
     });
 

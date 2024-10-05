@@ -167,14 +167,14 @@ export default function SignUp() {
           {activeTab === "company" && (
             <form className="flex flex-col gap-1">
               <div className="flex flex-col sm:px-10 w-full">
-                <label htmlFor="companyName" className="text-sm font-semibold mt-2">
+                <label htmlFor="username" className="text-sm font-semibold mt-2">
                   Company Name
                 </label>
                 <input
                   type="text"
                   placeholder="Company Name"
                   className="border p-2 rounded-md focus:outline-none mt-2"
-                  id="companyName"
+                  id="username"
                   onChange={handleChange}
                 />
               </div>
@@ -187,7 +187,7 @@ export default function SignUp() {
                   type="email"
                   placeholder="companyemail@domain.com"
                   className="border p-2 rounded-md focus:outline-none mt-2"
-                  id="companyEmail"
+                  id="email"
                   onChange={handleChange}
                 />
               </div>
