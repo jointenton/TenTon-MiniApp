@@ -69,12 +69,12 @@ export default function SignIn() {
   return (
     <div className="relative h-screen">
       {/* Overlay to darken the video */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-white z-10"></div>
 
       {/* Sign In Form */}
-      <div className="relative z-20 p-3 max-w-lg mx-auto bg-white bg-opacity-50 rounded-lg shadow-lg top-20">
+      <div className="relative z-20 p-3 max-w-lg mx-5 bg-primary rounded-lg shadow-lg top-[150px]">
         
-        <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
+        <h1 className="text-3xl text-center font-semibold my-7 text-white">Sign In</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="email"
@@ -93,15 +93,15 @@ export default function SignIn() {
 
           <button
             disabled={loading}
-            className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+            className="bg-white text-primary p-3 rounded-lg uppercase"
           >
             {loading ? 'Loading...' : 'Sign In'}
           </button>
         </form>
-        <div className="flex gap-2 my-6">
+        <div className="flex gap-2 my-6 text-white">
           <p>Don't have an account?</p>
           <Link to={'/signup'}>
-            <span className="text-blue-700">Sign up</span>
+            <span className="text-white font-bold underline">Sign up</span>
           </Link>
         
         </div>
