@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
 
   const verifyToken = async (token) => {
     try {
-      const response = await axios.get('http://localhost:5000/api/users/verify', { token });
+      const response = await axios.get('https://tenton-miniapp-q5q5.onrender.com/api/users/verify', { token });
       if (response.data.success) {
         setIsAuthenticated(true);
       } else {
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
 
   const signIn = async (dataToSend) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/signin', dataToSend);
+      const response = await axios.post('https://tenton-miniapp-q5q5.onrender.com/api/users/signin', dataToSend);
      
 
       if (response.data) {
@@ -78,7 +78,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const token = Cookies.get('authToken');
       const response = await axios.put(
-        'http://localhost:5000/api/users/update',
+        'https://tenton-miniapp-q5q5.onrender.com/api/users/update',
         updatedUserData,
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -116,7 +116,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const token = Cookies.get('authToken');
       // Send a PUT request to your backend to update the user data with the file
-      const response = await axios.put('http://localhost:5000/api/users/update', formData, {
+      const response = await axios.put('https://tenton-miniapp-q5q5.onrender.com/api/users/update', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data', // Specify the content type

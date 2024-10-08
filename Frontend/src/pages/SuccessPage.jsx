@@ -37,7 +37,7 @@ function SuccessPage() {
             };
 
             // Use axios to send a POST request to your signup endpoint
-            const response = await axios.post('http://localhost:5000/api/users/signup', dataToSend); // Adjust the URL as needed
+            const response = await axios.post('https://tenton-miniapp-q5q5.onrender.com/api/users/signup', dataToSend); // Adjust the URL as needed
 
             if (response.data.success === false) {
                 // Handle error response from the API
