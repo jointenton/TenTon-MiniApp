@@ -4,6 +4,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel'); // Adjust according to your User model
 const router = express.Router();
+dotenv.config();
 
 // Middleware to verify the JWT token
 const verifyToken = (req, res, next) => {
