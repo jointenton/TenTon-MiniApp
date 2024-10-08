@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
     return (
         <div>
-            <div className="max-w-md sm:mx-auto min-h-screen bg-primary">
+            <div className="max-w-md mx-auto min-h-screen bg-primary">
                 <div className="flex flex-col mx-[20px] items-center">
                     <div className="mt-[130px]">
                         <img src={logo} alt="TenTon Logo" />
