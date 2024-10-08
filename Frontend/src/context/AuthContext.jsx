@@ -31,15 +31,26 @@ export const AuthProvider = ({ children }) => {
 
   const verifyToken = async (token) => {
     try {
-      const response = await axios.get('https://tenton-miniapp-q5q5.onrender.com/api/users/verify', { token });
-      if (response.data.success) {
+      const response = await axios.get(
+        'https://tenton-miniapp-q5q5.onrender.com/verify',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+      
+      if (response.data.isAuthenticated) {
         setIsAuthenticated(true);
+        setUser(response.data.user);
       } else {
         setIsAuthenticated(false);
+        setUser(null);
       }
     } catch (error) {
       console.error('Token verification failed:', error);
       setIsAuthenticated(false);
+      setUser(null);
     } finally {
       setLoading(false);
     }
