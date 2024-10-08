@@ -82,7 +82,7 @@ const ProfilePage = () => {
     const onFileChange = (e) => {
         const file = e.target.files[0];
         handleImageUpload(file); // Call the image upload function
-      };
+    };
 
     const handleRemoveImage = () => {
         // Send a request to remove the profile image
@@ -99,12 +99,17 @@ const ProfilePage = () => {
             <div className="flex justify-center -mt-16 relative">
                 <div className="w-32 h-32 bg-gray-200 border-4 border-white rounded-full relative">
                     {user.profileImage ? (
-                        <img src={user.profileImage} alt="Profile" className="w-full h-full object-cover rounded-full" />
+                        <img
+                            src={`https://tenton-miniapp-q5q5.onrender.com/${user.profileImage}`} // Construct the full image URL
+                            alt="Profile"
+                            className="w-full h-full object-cover rounded-full"
+                        />
                     ) : (
                         <div className="flex items-center justify-center w-full h-full text-gray-500">
                             No Image
                         </div>
                     )}
+
                 </div>
             </div>
             <div className="text-center mt-2">
