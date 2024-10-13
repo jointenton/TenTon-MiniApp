@@ -26,72 +26,57 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     tags: {
-        type: [String],
+        type: [String],  // Array of tags, e.g., ['Developer', 'Designer']
         required: true
     },
     location: {
-        type: String,
-        // required: true
+        type: String,   // Could include lat/long coordinates for advanced geo-tracking
     },
     balance: {
         type: Number,
-        // required: true
+        default: 0      // Default balance for new users
     },
     referalId: {
         type: String,
-        // required: true
+        unique: true,   // Ensuring each referral ID is unique
     },
     about: {
         type: String,
-        // required: true
     },
-    facebook: {
-        type: String,
-    },
-    twitter: {
-        type: String,
-    },
-    instagram: {
-        type: String,
-    },
-    linkedin: {
-        type: String,
-    },
-    telegram: {
-        type: String,
-    },
-    website: {
-        type: String,
-    },
-    portfolio: {
-        type: String,
+    socialLinks: {
+        facebook: { type: String },
+        twitter: { type: String },
+        instagram: { type: String },
+        linkedin: { type: String },
+        telegram: { type: String },
+        website: { type: String },
+        portfolio: { type: String },
     },
     profileImage: {
-        type: String,
-        // required: true,
+        type: String,    // Path to the user's profile picture (stored on cloud or server)
     },
     appointment: {
-        type: String,
+        type: String,    // Information regarding any appointments (e.g., meetings)
     },
     skills: {
-        type: [String],
+        type: [String],  // Array of skills the user possesses
         required: true
     },
     profession: {
-        type: [String],
-        // required: true
+        type: [String],  // Array of professions user is involved in, optional
     },
     friends: {
-        type: [String],
-        // required: true
+        type: [mongoose.Schema.Types.ObjectId],  // Array of friend references (other users)
+        ref: 'User'
     },
     appliedJobs: {
-        type: [String],
-        // required: true
+        type: [mongoose.Schema.Types.ObjectId],  // Array of job IDs the user has applied to
+        ref: 'Job'
     },
 }, {
-    timestamps: true
+    timestamps: true  // Automatically manage createdAt and updatedAt fields
 });
 
 const User = mongoose.model('User', userSchema);
+
 export default User;
