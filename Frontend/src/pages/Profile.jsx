@@ -100,7 +100,7 @@ const ProfilePage = () => {
                 <div className="w-32 h-32 bg-gray-200 border-4 border-white rounded-full relative">
                     {user.profileImage ? (
                         <img
-                            src={`https://tenton-miniapp-q5q5.onrender.com/${user.profileImage}`} // Construct the full image URL
+                            src={`http://localhost:5000${user.profileImage}`} // Construct the full image URL
                             alt="Profile"
                             className="w-full h-full object-cover rounded-full"
                         />
@@ -230,7 +230,7 @@ const ProfilePage = () => {
                                 {user.profileImage ? (
                                     <>
                                         <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
-                                            <img src={user.profileImage} alt="Profile" className="w-full h-full object-cover" />
+                                            <img src={`http://localhost:5000${user.profileImage}`} alt="Profile" className="w-full h-full object-cover" />
                                         </div>
                                         <div className="flex mt-4 gap-2">
                                             <button className="bg-primary text-white py-2 px-3 rounded-md" onClick={() => document.getElementById('imageUpload').click()}>

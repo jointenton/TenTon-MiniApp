@@ -2,7 +2,7 @@
   "name": "tenton_frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://tenton-miniapp-q5q5.onrender.com",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^6.4.5",
